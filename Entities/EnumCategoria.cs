@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class TipoQuartos
-    {
         public enum EnumCategoria
         {
             Solterio,
@@ -17,5 +15,4 @@ namespace Entities
             SuiteMaster,
             SuiteEspecial,
         }
-    }
 }

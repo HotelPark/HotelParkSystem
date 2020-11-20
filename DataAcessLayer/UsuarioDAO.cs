@@ -12,7 +12,7 @@ namespace DataAcessLayer
 {
   public  class FuncionarioDAO
     {
-        public Response Insert(Funcionario funcionario)
+        public Response Insert(Usuario funcionario)
         {
             Response response = new Response();
             SqlConnection connection = new SqlConnection();
@@ -20,7 +20,7 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-            "INSERT INTO FUNCIONARIOS (NOME, CPF, RG, TELEFONE, ENDEREÇO, EMAIL, SENHASISTEMA) VALUES (@NOME, @CPF, @RG, @TELEFONE, @ENDERECO, @EMAIL, @SENHASISTEMA)";
+            "INSERT INTO USUARIOS (NOME, CPF, RG, TELEFONE, ENDERECO, EMAIL, SENHA) VALUES (@NOME, @CPF, @RG, @TELEFONE, @ENDERECO, @EMAIL, @SENHA)";
 
             command.Parameters.AddWithValue("@NOME", funcionario.Nome);
             command.Parameters.AddWithValue("@CPF", funcionario.CPF);
@@ -28,7 +28,7 @@ namespace DataAcessLayer
             command.Parameters.AddWithValue("@TELEFONE", funcionario.Telefone);
             command.Parameters.AddWithValue("@ENDERECO", funcionario.Endereco);
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);
-            command.Parameters.AddWithValue("@SENHASISTEMA", funcionario.Senha);
+            command.Parameters.AddWithValue("@SENHA", funcionario.Senha);
 
             command.Connection = connection;
 
@@ -52,21 +52,21 @@ namespace DataAcessLayer
             }
             return response;
         }
-        public Response Update(Funcionario funcionario)
+        public Response Update(Usuario funcionario)
         {
             Response response = new Response();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "UPDATE CLIENTES SET NOME = @NOME, CPF = @CPF, RG = @RG WHERE ID = @ID";
+            command.CommandText = "UPDATE USUARIOS SET NOME = @NOME, CPF = @CPF, RG = @RG, TELEFONE = @TELEFONE, ENDERECO = @ENDERECO, EMAIL = @EMAIL, SENHA = @SENHA, WHERE ID = @ID";
             command.Parameters.AddWithValue("@NOME", funcionario.Nome);
             command.Parameters.AddWithValue("@CPF", funcionario.CPF);
             command.Parameters.AddWithValue("@RG", funcionario.RG);
             command.Parameters.AddWithValue("@TELEFONE", funcionario.Telefone);
             command.Parameters.AddWithValue("ENDERECO", funcionario.Endereco);
             command.Parameters.AddWithValue("@EMAIL", funcionario.Email);
-            command.Parameters.AddWithValue("@SENHASISTEMA", funcionario.Senha);
+            command.Parameters.AddWithValue("@SENHA", funcionario.Senha);
             command.Parameters.AddWithValue("@ID", funcionario.ID);
             command.Connection = connection;
 
@@ -97,7 +97,7 @@ namespace DataAcessLayer
             }
             return response;
         }
-        public Response Delete(Funcionario funcionario)
+        public Response Delete(Usuario funcionario)
         {
             Response response = new Response();
             SqlConnection connection = new SqlConnection();
@@ -106,7 +106,7 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-                "DELETE FROM FUNCIONARIOS WHERE ID = @ID";
+                "DELETE FROM USUARIOS WHERE ID = @ID";
             command.Parameters.AddWithValue("@ID", funcionario.ID);
 
             command.Connection = connection;
@@ -139,16 +139,16 @@ namespace DataAcessLayer
             }
             return response;
         }
-        public QueryResponse<Funcionario> GetAll()
+        public QueryResponse<Usuario> GetAll()
         {
-            QueryResponse<Funcionario> response = new QueryResponse<Funcionario>();
+            QueryResponse<Usuario> response = new QueryResponse<Usuario>();
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM FUNCIONARIOS";
+            command.CommandText = "SELECT * FROM USUARIOS";
 
             command.Connection = connection;
 
@@ -158,18 +158,18 @@ namespace DataAcessLayer
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                List<Funcionario> funcionario = new List<Funcionario>();
+                List<Usuario> funcionario = new List<Usuario>();
 
                 while (reader.Read())
                 {
-                    Funcionario funcionarios = new Funcionario();
+                    Usuario funcionarios = new Usuario();
                     funcionarios.ID = (int)reader["ID"];
                     funcionarios.Nome = (string)reader["NOME"];
                     funcionarios.CPF = (string)reader["CPF"];
                     funcionarios.RG = (string)reader["RG"];
                     funcionarios.Telefone = (string)reader["TELEFONE"];
                     funcionarios.Email = (string)reader["EMAIL"];
-                    funcionarios.Senha = (string)reader["SENHASISTEMA"];
+                    funcionarios.Senha = (string)reader["SENHA"];
                     funcionario.Add(funcionarios);
 
                 }
@@ -194,14 +194,14 @@ namespace DataAcessLayer
         }
         public Response IsCpfUnique(string cpf)
         {
-            QueryResponse<Funcionario> response = new QueryResponse<Funcionario>();
+            QueryResponse<Usuario> response = new QueryResponse<Usuario>();
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT ID FROM CLIENTES WHERE CPF = @CPF";
+            command.CommandText = "SELECT ID FROM USUARIOS WHERE CPF = @CPF";
             command.Parameters.AddWithValue("@CPF", cpf);
             command.Connection = connection;
 
@@ -236,15 +236,15 @@ namespace DataAcessLayer
                 connection.Close();
             }
         }
-        public SingleResponse<Funcionario> GetById(int id)
+        public SingleResponse<Usuario> GetById(int id)
         {
-            SingleResponse<Funcionario> response = new SingleResponse<Funcionario>();
+            SingleResponse<Usuario> response = new SingleResponse<Usuario>();
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM FUNCIONARIOS WHERE ID = @ID";
+            command.CommandText = "SELECT * FROM USUARIOS WHERE ID = @ID";
             command.Parameters.AddWithValue("@ID", id);
             command.Connection = connection;
 
@@ -254,14 +254,14 @@ namespace DataAcessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Funcionario funcionarios = new Funcionario();
+                    Usuario funcionarios = new Usuario();
                     funcionarios.ID = (int)reader["ID"];
                     funcionarios.Nome = (string)reader["NOME"];
                     funcionarios.CPF = (string)reader["CPF"];
                     funcionarios.RG = (string)reader["RG"];
                     funcionarios.Telefone = (string)reader["TELEFONE"];
                     funcionarios.Email = (string)reader["EMAIL"];
-                    funcionarios.Senha = (string)reader["SENHASISTEMA"];
+                    funcionarios.Senha = (string)reader["SENHA"];
                     response.Message = "Dados selecionados com sucesso.";
                     response.Success = true;
                     response.Data = funcionarios;
@@ -286,13 +286,13 @@ namespace DataAcessLayer
         }
         public Response IsEmailUnique(string email)
         {
-            QueryResponse<Funcionario> response = new QueryResponse<Funcionario>();
+            QueryResponse<Usuario> response = new QueryResponse<Usuario>();
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT ID FROM CLIENTES WHERE EMAIL = @EMAIL";
+            command.CommandText = "SELECT ID FROM USUARIOS WHERE EMAIL = @EMAIL";
             command.Parameters.AddWithValue("@EMAIL", email);
             command.Connection = connection;
 
@@ -328,15 +328,15 @@ namespace DataAcessLayer
             }
         }
 
-        public SingleResponse<Funcionario> Autentication(string email, string senhasistema)
+        public SingleResponse<Usuario> Autentication(string email, string senhasistema)
         {
-            SingleResponse<Funcionario> response = new SingleResponse<Funcionario>();
+            SingleResponse<Usuario> response = new SingleResponse<Usuario>();
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM FUNCIONARIOS WHERE EMAIL = @EMAIL AND SENHASISTEMA = @SENHASISTEMA";
+            command.CommandText = "SELECT * FROM USUARIOS WHERE EMAIL = @EMAIL AND SENHASISTEMA = @SENHASISTEMA";
             command.Parameters.AddWithValue("@EMAIL", email);
             command.Parameters.AddWithValue("@SENHASISTEMA", senhasistema);
             command.Connection = connection;
@@ -347,14 +347,14 @@ namespace DataAcessLayer
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    Funcionario funcionarios = new Funcionario();
+                    Usuario funcionarios = new Usuario();
                     funcionarios.ID = (int)reader["ID"];
                     funcionarios.Nome = (string)reader["NOME"];
                     funcionarios.CPF = (string)reader["CPF"];
                     funcionarios.RG = (string)reader["RG"];
                     funcionarios.Telefone = (string)reader["TELEFONE"];
                     funcionarios.Email = (string)reader["EMAIL"];
-                    funcionarios.Senha = (string)reader["SENHASISTEMA"];
+                    funcionarios.Senha = (string)reader["SENHA"];
                     response.Message = "Dados selecionados com sucesso.";
                     response.Success = true;
                     response.Data = funcionarios;

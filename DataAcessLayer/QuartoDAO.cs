@@ -19,12 +19,12 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
             SqlCommand command = new SqlCommand();
             command.CommandText =
-                "INSERT INTO QUARTOS (VALORBASE, RESERVA, NUMQUARTO, CATEGORIAS, OCUPADO) VALUES (@VALORBASE, @RESERVA, @NUMQUARTO, @CATEGORIAS, @OCUPADO)";
-            command.Parameters.AddWithValue("@VALORBASE", quarto.ValorBase);
+                "INSERT INTO QUARTOS (VALOR_BASE, RESERVA, NUMQUARTO, CATEGORIAS, ESTAOCUPADO) VALUES (@VALOR_BASE, @RESERVA, @NUMQUARTO, @CATEGORIAS, @ESTAOCUPADO)";
+            command.Parameters.AddWithValue("@VALOR_BASE", quarto.Valor_Base);
             command.Parameters.AddWithValue("@RESERVA", quarto.Reserva);
             command.Parameters.AddWithValue("@NUMQUARTO", quarto.NumQuarto);
             command.Parameters.AddWithValue("@CATEGORIAS", quarto.Categoria);
-            command.Parameters.AddWithValue("@OCUPADO", quarto.Ocupado);
+            command.Parameters.AddWithValue("@OCUPADO", quarto.EstaOcupado);
 
             command.Connection = connection;
 
@@ -57,12 +57,12 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-                "UPDATE INTO QUARTOS (VALORBASE, RESERVA, NUMQUARTO, CATEGORIAS, OCUPADO) VALUES (@VALORBASE, @RESERVA, @NUMQUARTO, @CATEGORIAS, @OCUPADO)";
-            command.Parameters.AddWithValue("@VALORBASE", quarto.ValorBase);
+                "UPDATE QUARTOS SET VALOR_BASE = @VALOR_BASE, RESERVA = @RESERVA, NUMQUARTO = @NUMQUARTO, CATEGORIAS = @CATEGORIAS, ESTAOCUPADO = @ESTAOCUPADO";
+            command.Parameters.AddWithValue("@VALOR_BASE", quarto.Valor_Base);
             command.Parameters.AddWithValue("@RESERVA", quarto.Reserva);
             command.Parameters.AddWithValue("@NUMQUARTO", quarto.NumQuarto);
             command.Parameters.AddWithValue("@CATEGORIAS", quarto.Categoria);
-            command.Parameters.AddWithValue("@OCUPADO", quarto.Ocupado);
+            command.Parameters.AddWithValue("@ESTAOCUPADO", quarto.EstaOcupado);
 
             command.Connection = connection;
 
@@ -144,7 +144,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM QUARTOS WHERE OCUPADO = 0";
+            command.CommandText = "SELECT * FROM QUARTOS";
 
             command.Connection = connection;
 
@@ -160,11 +160,11 @@ namespace DataAcessLayer
                 {
                     Quarto quarto = new Quarto();
                     quarto.ID = (int)reader["ID"];
-                    quarto.ValorBase = (double)reader["VALORBASE"];
+                    quarto.Valor_Base = (double)reader["VALOR_BASE"];
                     quarto.Reserva = (bool)reader["RESERVA"];
                     quarto.NumQuarto = (string)reader["NUMQUARTO"];
-                    //quarto.Categoria = (int)reader["CATEGORIAS"];
-                    quarto.Ocupado = (bool)reader["OCUPADO"];
+                    quarto.Categoria = (EnumCategoria)reader["CATEGORIAS"];
+                    quarto.EstaOcupado = (bool)reader["ESTAOCUPADO"];
                     quartos.Add(quarto);
                 }
                 response.Success = true;
@@ -208,11 +208,11 @@ namespace DataAcessLayer
                 {
                     Quarto quarto = new Quarto();
                     quarto.ID = (int)reader["ID"];
-                    quarto.ValorBase = (double)reader["VALORBASE"];
+                    quarto.Valor_Base = (double)reader["VALOR_BASE"];
                     quarto.Reserva = (bool)reader["RESERVA"];
                     quarto.NumQuarto = (string)reader["NUMQUARTO"];
-                    //quarto.Quartos = (int)reader["QUARTOS"];
-                    quarto.Ocupado = (bool)reader["OCUPADO"];
+                    quarto.Categoria = (EnumCategoria)reader["CATEGORIAS"];
+                    quarto.EstaOcupado = (bool)reader["ESTAOCUPADO"];
                     response.Message = "Dados selecionados com sucesso.";
                     response.Success = true;
                     response.Data = quarto;

@@ -20,13 +20,13 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-            "INSERT INTO FORNECEDORES (NOME, CNPJ, TELEFONE, EMAIL, TIPOFUNCIONARIO) VALUES (@NOME, @CNPJ, @TELEFONE, @EMAIL, @TIPOFUNCIONARIO)";
+            "INSERT INTO FORNECEDORES (RAZAO_SOCIAL, CNPJ, NOME_CONTATO, TELEFONE, EMAIL) VALUES (@RAZAO_SOCIAL, @CNPJ, @NOME_CONTATO, @TELEFONE, @EMAIL)";
 
-            command.Parameters.AddWithValue("@NOME", fornecedor.Nome);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
+            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
-            command.Parameters.AddWithValue("@TIPOFUNCIONARIO", fornecedor.TipoServico);
 
             command.Connection = connection;
 
@@ -58,13 +58,13 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-            "INSERT INTO FORNECEDORES (NOME, CNPJ, TELEFONE, EMAIL, TIPOFUNCIONARIO,) VALUES (@NOME, @CNPJ, @TELEFONE, @EMAIL, @TIPOFUNCIONARIO,";
+            "UPDATE INTO FORNECEDORES (RAZAO_SOCIAL, CNPJ, NOME_CONTATO, TELEFONE, EMAIL) VALUES (@RAZAO_SOCIAL, @CNPJ, @NOME_CONTATO, @TELEFONE, @EMAIL)";
 
-            command.Parameters.AddWithValue("@NOME", fornecedor.Nome);
+            command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
+            command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);
             command.Parameters.AddWithValue("@TELEFONE", fornecedor.Telefone);
             command.Parameters.AddWithValue("@EMAIL", fornecedor.Email);
-            command.Parameters.AddWithValue("@TIPOFUNCIONARIO", fornecedor.TipoServico);
 
             command.Connection = connection;
 
@@ -146,7 +146,7 @@ namespace DataAcessLayer
 
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM FORNECEDORES WHERE ID != ''";
+            command.CommandText = "SELECT * FROM FORNECEDORES";
 
             command.Connection = connection;
 
@@ -162,11 +162,11 @@ namespace DataAcessLayer
                 {
                     Fornecedor fornecedor = new Fornecedor();
                     fornecedor.ID = (int)reader["ID"];
-                    fornecedor.Nome = (string)reader["NOME"];
+                    fornecedor.Razao_Social = (string)reader["RAZAO_SOCIAL"];
                     fornecedor.CNPJ = (string)reader["CNPJ"];
+                    fornecedor.Nome_Contato = (string)reader["NOME_CONTATO"];
                     fornecedor.Telefone = (string)reader["TELEFONE"];
                     fornecedor.Email = (string)reader["EMAIL"];
-                    fornecedor.TipoServico = (string)reader["TIPOFUNCIONARIO"];
                     fornecedores.Add(fornecedor);
 
                 }
@@ -253,11 +253,11 @@ namespace DataAcessLayer
                 {
                     Fornecedor fornecedor = new Fornecedor();
                     fornecedor.ID = (int)reader["ID"];
-                    fornecedor.Nome = (string)reader["NOME"];
+                    fornecedor.Razao_Social = (string)reader["RAZAO_SOCIAL"];
                     fornecedor.CNPJ = (string)reader["CNPJ"];
+                    fornecedor.Nome_Contato = (string)reader["NOME_CONTATO"];
                     fornecedor.Telefone = (string)reader["TELEFONE"];
                     fornecedor.Email = (string)reader["EMAIL"];
-                    fornecedor.TipoServico = (string)reader["TIPOFUNCIONARIO"];
                     response.Message = "Dados selecionados com sucesso.";
                     response.Success = true;
                     response.Data = fornecedor;

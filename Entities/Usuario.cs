@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Funcionario
+    public class Usuario
     {
         public int ID { get; set; }
         public string Nome { get; set; }
@@ -16,6 +16,5 @@ namespace Entities
         public string Endereco { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public bool IsAdm { get; set; }
     }
 }

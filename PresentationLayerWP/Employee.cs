@@ -19,14 +19,14 @@ namespace PresentationLayerWP
         public Employee()
         {
             InitializeComponent();
-            SingleResponse<Funcionario> response = funcionarioBLL.GetById(2);
-            Funcionario funcionario = response.Data;
+            SingleResponse<Usuario> response = funcionarioBLL.GetById(2);
+            Usuario funcionario = response.Data;
         }
         FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
 
         private void btnregister_Click(object sender, EventArgs e)
         {
-            Funcionario funcionario = new Funcionario();
+            Usuario funcionario = new Usuario();
             funcionario.Nome = nometxt.Text;
             funcionario.CPF = cpftxt.Text;
             funcionario.RG = rgtxt.Text;
@@ -74,7 +74,7 @@ namespace PresentationLayerWP
         }
         private void UpdateGridView()
         {
-            QueryResponse<Funcionario> response = funcionarioBLL.GetAll();
+            QueryResponse<Usuario> response = funcionarioBLL.GetAll();
             if (response.Success)
             {
                 dgvemployee.DataSource = response.Data;
@@ -87,7 +87,7 @@ namespace PresentationLayerWP
 
         private void dgvemployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Funcionario funcionario = (Funcionario).this.dgvemployee.SelectedRows[0].DataBoundItem;
+            Usuario funcionario = (Usuario).this.dgvemployee.SelectedRows[0].DataBoundItem;
             this.nometxt.Text = funcionario.Nome;
             this.cpftxt.Text = funcionario.CPF;
             this.id = funcionario.ID;

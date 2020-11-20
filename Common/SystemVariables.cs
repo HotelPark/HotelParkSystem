@@ -9,6 +9,6 @@ namespace Common
 {
    public class SystemVariables
     {
-        public static Funcionario funcionariologado { get; set; }
+        public static Usuario funcionariologado { get; set; }
     }
 }

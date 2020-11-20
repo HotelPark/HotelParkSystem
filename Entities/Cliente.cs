@@ -14,7 +14,6 @@ namespace Entities
         public string RG { get; set; }
         public string Telefone_1 { get; set; }
         public string Telefone_2 { get; set; }
-
         public string Endereco{ get; set; }
         public string Email { get; set; }
         public bool Especial { get; set; }

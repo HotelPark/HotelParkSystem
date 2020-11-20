@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="FornecedorDAO.cs" />
-    <Compile Include="FuncionarioDAO.cs" />
+    <Compile Include="UsuarioDAO.cs" />
     <Compile Include="Infrastructure\ConnectionHelper.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

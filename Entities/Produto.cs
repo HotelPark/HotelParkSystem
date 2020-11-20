@@ -13,5 +13,7 @@ namespace Entities
         public double Preco { get; set; }
         public int Estoque { get; set; }
         public DateTime DataValidade { get; set; }
+        public int Fornecedor_ID { get; set; }
+        public Fornecedor Fornecedor { get; set; }
     }
 }

@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class FuncionarioBLL : BaseValidator<Funcionario>
+    public class FuncionarioBLL : BaseValidator<Usuario>
     {
         private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        public SingleResponse<Funcionario> GetById(int id)
+        public SingleResponse<Usuario> GetById(int id)
         {
             return funcionarioDAO.GetById(id);
         }
-        public Response Insert(Funcionario item)
+        public Response Insert(Usuario item)
         {
             Response response = Validate(item);
             if (response.Success)
@@ -26,7 +26,7 @@ namespace BLL
             }
             return response;
         }
-        public Response Update(Funcionario item)
+        public Response Update(Usuario item)
         {
             Response response = Validate(item);
             if (response.Success)
@@ -35,21 +35,21 @@ namespace BLL
             }
             return response;
         }
-        public Response Delete(Funcionario item)
+        public Response Delete(Usuario item)
         {
             return funcionarioDAO.Delete(item);
         }
-        public QueryResponse<Funcionario> GetAll()
+        public QueryResponse<Usuario> GetAll()
         {
-            QueryResponse<Funcionario> responseFuncionario = funcionarioDAO.GetAll();
-            List<Funcionario> temp = responseFuncionario.Data;
-            foreach (Funcionario item in temp)
+            QueryResponse<Usuario> responseFuncionario = funcionarioDAO.GetAll();
+            List<Usuario> temp = responseFuncionario.Data;
+            foreach (Usuario item in temp)
             {
                 item.CPF = item.CPF.Insert(3, ".").Insert(7, ".").Insert(12, "-");
             }
             return responseFuncionario;
         }
-        public override Response Validate(Funcionario item)
+        public override Response Validate(Usuario item)
         {
             if (string.IsNullOrWhiteSpace(item.Nome))
             {
@@ -121,7 +121,7 @@ namespace BLL
 
             if (r.Success)
             {
-                SingleResponse<Funcionario> responseF = funcionarioDAO.Autentication(email, senhasistema);
+                SingleResponse<Usuario> responseF = funcionarioDAO.Autentication(email, senhasistema);
 
                 if (responseF.Success)
                 {
