@@ -27,11 +27,11 @@ namespace PresentationLayerWP
         private void btncadastrar_Click(object sender, EventArgs e)
         {
             Fornecedor fornecedor = new Fornecedor();
-            fornecedor.Nome = txtnome.Text;
+            fornecedor.Razao_Social = txtnome.Text;
             fornecedor.CNPJ = txtcnpj.Text;
             fornecedor.Email = txtemail.Text;
             fornecedor.Telefone = txttel1.Text;
-            fornecedor.TipoServico = txtrazaosocial.Text;
+            //fornecedor.TipoServico = txtrazaosocial.Text;
 
             Response response = fornecedorBLL.Insert(fornecedor);
             MessageBox.Show(response.Message);

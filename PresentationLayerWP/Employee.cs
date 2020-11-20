@@ -38,7 +38,7 @@ namespace PresentationLayerWP
             {
                 MessageBox.Show("Senhas não coincidem");
             }
-            funcionario.IsAdm = cbadm.Checked;
+            //funcionario.IsAdm = cbadm.Checked;
 
             Response response = funcionarioBLL.Insert(funcionario);
             MessageBox.Show(response.Message);
@@ -87,10 +87,10 @@ namespace PresentationLayerWP
 
         private void dgvemployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Usuario funcionario = (Usuario).this.dgvemployee.SelectedRows[0].DataBoundItem;
-            this.nometxt.Text = funcionario.Nome;
-            this.cpftxt.Text = funcionario.CPF;
-            this.id = funcionario.ID;
+            //Usuario funcionario = (Usuario).this.dgvemployee.SelectedRows[0].DataBoundItem;
+            //this.nometxt.Text = funcionario.Nome;
+            //this.cpftxt.Text = funcionario.CPF;
+            //this.id = funcionario.ID;
         }
     }
 }

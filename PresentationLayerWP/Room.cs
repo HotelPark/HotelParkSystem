@@ -32,7 +32,7 @@ namespace PresentationLayerWP
         private void btnregister_Click(object sender, EventArgs e)
         {
             Quarto quarto = new Quarto();
-            quarto.ValorBase = Convert.ToDouble(txtroombaseprice.Text);
+            quarto.Valor_Base = Convert.ToDouble(txtroombaseprice.Text);
             quarto.NumQuarto = txtroomnumber.Text;
 
             Response response = roomBLL.Insert(quarto);
@@ -59,7 +59,7 @@ namespace PresentationLayerWP
 
         private void RoomRegisterForm_Load(object sender, EventArgs e)
         {
-            cbcategory.DataSource = Enum.GetNames(typeof(TipoQuartos.EnumCategoria));
+            cbcategory.DataSource = Enum.GetNames(typeof(EnumCategoria));
             UpdateGridView();
         }
     }

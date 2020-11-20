@@ -32,8 +32,8 @@ namespace PresentationLayerWP
             cliente.Nome = txtnome.Text;
             cliente.CPF = txtcpf.Text;
             cliente.RG = txtrg.Text;
-            cliente.Telefone = txttel1.Text;
-            //cliente.Celular = txtcelular.Text;
+            cliente.Telefone_1 = txttelefone1.Text;
+            cliente.Telefone_2 = txttelefone2.Text;
             cliente.Email = txtemail.Text;
             cliente.Endereco = txtendereco.Text;
             cliente.Especial = cbespecial.Checked;
@@ -72,7 +72,8 @@ namespace PresentationLayerWP
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Cliente cliente = (Cliente)this.dgvClientes.SelectedRows[0].DataBoundItem;
-            this.txtcelular.Text = cliente.Telefone;
+            this.txttelefone1.Text = cliente.Telefone_1;
+            this.txttelefone2.Text = cliente.Telefone_2;
             this.txtcpf.Text = cliente.CPF;
             this.txtemail.Text = cliente.Email;
             this.txtendereco.Text = cliente.Endereco;

@@ -35,9 +35,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtrg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txttel1 = new System.Windows.Forms.TextBox();
+            this.txttelefone1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtcelular = new System.Windows.Forms.TextBox();
+            this.txttelefone2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,136 +54,121 @@
             // 
             // txtnome
             // 
-            this.txtnome.Location = new System.Drawing.Point(16, 42);
-            this.txtnome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtnome.Location = new System.Drawing.Point(12, 34);
             this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(235, 22);
+            this.txtnome.Size = new System.Drawing.Size(177, 20);
             this.txtnome.TabIndex = 0;
             // 
             // Nome
             // 
             this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(16, 18);
-            this.Nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Nome.Location = new System.Drawing.Point(12, 15);
             this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(45, 17);
+            this.Nome.Size = new System.Drawing.Size(35, 13);
             this.Nome.TabIndex = 1;
             this.Nome.Text = "Nome";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "CPF";
             // 
             // txtcpf
             // 
-            this.txtcpf.Location = new System.Drawing.Point(16, 107);
-            this.txtcpf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcpf.Location = new System.Drawing.Point(12, 87);
             this.txtcpf.Name = "txtcpf";
-            this.txtcpf.Size = new System.Drawing.Size(235, 22);
+            this.txtcpf.Size = new System.Drawing.Size(177, 20);
             this.txtcpf.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 151);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 17);
+            this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "RG";
             // 
             // txtrg
             // 
-            this.txtrg.Location = new System.Drawing.Point(16, 175);
-            this.txtrg.Margin = new System.Windows.Forms.Padding(4);
+            this.txtrg.Location = new System.Drawing.Point(12, 142);
             this.txtrg.Name = "txtrg";
-            this.txtrg.Size = new System.Drawing.Size(235, 22);
+            this.txtrg.Size = new System.Drawing.Size(177, 20);
             this.txtrg.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 218);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Telefone";
+            this.label4.Text = "Telefone 1";
             // 
-            // txttel1
+            // txttelefone1
             // 
-            this.txttel1.Location = new System.Drawing.Point(16, 241);
-            this.txttel1.Margin = new System.Windows.Forms.Padding(4);
-            this.txttel1.Name = "txttel1";
-            this.txttel1.Size = new System.Drawing.Size(235, 22);
-            this.txttel1.TabIndex = 6;
+            this.txttelefone1.Location = new System.Drawing.Point(12, 196);
+            this.txttelefone1.Name = "txttelefone1";
+            this.txttelefone1.Size = new System.Drawing.Size(177, 20);
+            this.txttelefone1.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 281);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 228);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 17);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Celular";
+            this.label5.Text = "Telefone 2";
             // 
-            // txtcelular
+            // txttelefone2
             // 
-            this.txtcelular.Location = new System.Drawing.Point(16, 304);
-            this.txtcelular.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcelular.Name = "txtcelular";
-            this.txtcelular.Size = new System.Drawing.Size(235, 22);
-            this.txtcelular.TabIndex = 8;
+            this.txttelefone2.Location = new System.Drawing.Point(12, 247);
+            this.txttelefone2.Name = "txttelefone2";
+            this.txttelefone2.Size = new System.Drawing.Size(177, 20);
+            this.txttelefone2.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 346);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 281);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Email";
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(16, 369);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtemail.Location = new System.Drawing.Point(12, 300);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(235, 22);
+            this.txtemail.Size = new System.Drawing.Size(177, 20);
             this.txtemail.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 410);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(12, 333);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 17);
+            this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Endereço";
             // 
             // txtendereco
             // 
-            this.txtendereco.Location = new System.Drawing.Point(16, 433);
-            this.txtendereco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtendereco.Location = new System.Drawing.Point(12, 352);
             this.txtendereco.Name = "txtendereco";
-            this.txtendereco.Size = new System.Drawing.Size(235, 22);
+            this.txtendereco.Size = new System.Drawing.Size(177, 20);
             this.txtendereco.TabIndex = 12;
             // 
             // btncadastrar
             // 
-            this.btncadastrar.Location = new System.Drawing.Point(284, 418);
-            this.btncadastrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btncadastrar.Location = new System.Drawing.Point(213, 340);
             this.btncadastrar.Name = "btncadastrar";
-            this.btncadastrar.Size = new System.Drawing.Size(150, 75);
+            this.btncadastrar.Size = new System.Drawing.Size(112, 61);
             this.btncadastrar.TabIndex = 14;
             this.btncadastrar.Text = "Cadastrar";
             this.btncadastrar.UseVisualStyleBackColor = true;
@@ -192,21 +177,19 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(284, 42);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvClientes.Location = new System.Drawing.Point(213, 34);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(782, 349);
+            this.dgvClientes.Size = new System.Drawing.Size(586, 284);
             this.dgvClientes.TabIndex = 16;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(442, 418);
-            this.btnclear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnclear.Location = new System.Drawing.Point(332, 340);
             this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(150, 75);
+            this.btnclear.Size = new System.Drawing.Size(112, 61);
             this.btnclear.TabIndex = 17;
             this.btnclear.Text = "Limpar Campos";
             this.btnclear.UseVisualStyleBackColor = true;
@@ -215,20 +198,18 @@
             // cbespecial
             // 
             this.cbespecial.AutoSize = true;
-            this.cbespecial.Location = new System.Drawing.Point(16, 472);
-            this.cbespecial.Margin = new System.Windows.Forms.Padding(4);
+            this.cbespecial.Location = new System.Drawing.Point(12, 384);
             this.cbespecial.Name = "cbespecial";
-            this.cbespecial.Size = new System.Drawing.Size(83, 21);
+            this.cbespecial.Size = new System.Drawing.Size(66, 17);
             this.cbespecial.TabIndex = 18;
             this.cbespecial.Text = "Especial";
             this.cbespecial.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(600, 418);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(450, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 75);
+            this.button1.Size = new System.Drawing.Size(112, 61);
             this.button1.TabIndex = 19;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
@@ -236,29 +217,27 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(758, 418);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(568, 340);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 75);
+            this.button2.Size = new System.Drawing.Size(112, 61);
             this.button2.TabIndex = 20;
             this.button2.Text = "Pesquisar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(916, 418);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(687, 340);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 75);
+            this.button3.Size = new System.Drawing.Size(112, 61);
             this.button3.TabIndex = 21;
             this.button3.Text = "Excluir";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 521);
+            this.ClientSize = new System.Drawing.Size(818, 423);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -271,16 +250,15 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtcelular);
+            this.Controls.Add(this.txttelefone2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txttel1);
+            this.Controls.Add(this.txttelefone1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtrg);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtcpf);
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.txtnome);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Customer";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.CadastroCliente_Load);
@@ -299,9 +277,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtrg;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txttel1;
+        private System.Windows.Forms.TextBox txttelefone1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtcelular;
+        private System.Windows.Forms.TextBox txttelefone2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label7;
