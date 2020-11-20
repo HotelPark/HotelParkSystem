@@ -16,7 +16,7 @@ namespace PresentationLayerWP
         {
             InitializeComponent();
         }
-
+        Clientes cliente = new Clientes();
         private void MainForm2_Load(object sender, EventArgs e)
         {
 

@@ -38,8 +38,6 @@ namespace PresentationLayerWP
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.emailtxt.Text = "rafaelzinho@hotmail.com";
-            this.senhatxt.Text = "123";
         }
     }
 }

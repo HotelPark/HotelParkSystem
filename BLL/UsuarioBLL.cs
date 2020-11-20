@@ -43,11 +43,18 @@ namespace BLL
         {
             QueryResponse<Usuario> responseFuncionario = funcionarioDAO.GetAll();
             List<Usuario> temp = responseFuncionario.Data;
-            foreach (Usuario item in temp)
+            if (temp == null)
             {
-                item.CPF = item.CPF.Insert(3, ".").Insert(7, ".").Insert(12, "-");
+                return responseFuncionario;
             }
-            return responseFuncionario;
+            else
+            {
+                foreach (Usuario item in temp)
+                {
+                    item.CPF = item.CPF.Insert(3, ".").Insert(7, ".").Insert(12, "-");
+                }
+                return responseFuncionario;
+            }
         }
         public override Response Validate(Usuario item)
         {
