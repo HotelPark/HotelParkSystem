@@ -16,5 +16,36 @@ namespace PresentationLayerWP
         {
             InitializeComponent();
         }
+
+        private void MainForm2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnclientes_Click(object sender, EventArgs e)
+        {
+            SlidePanel.Height = btnclientes.Height;
+
+        }
+
+        private void btnfornecedores_Click(object sender, EventArgs e)
+        {
+            SlidePanel.Height = btnfornecedores.Height;
+        }
+
+        private void btnprodutos_Click(object sender, EventArgs e)
+        {
+            SlidePanel.Height = btnprodutos.Height;
+        }
+
+        private void btnquartos_Click(object sender, EventArgs e)
+        {
+            SlidePanel.Height = btnquartos.Height;
+        }
+
+        private void btnusuarios_Click(object sender, EventArgs e)
+        {
+            SlidePanel.Height = btnusuarios.Height;
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SlidePanel = new System.Windows.Forms.Panel();
             this.btnusuarios = new System.Windows.Forms.Button();
             this.btnquartos = new System.Windows.Forms.Button();
             this.btnprodutos = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.btnclientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.SlidePanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,14 @@
             this.panel1.Size = new System.Drawing.Size(200, 600);
             this.panel1.TabIndex = 0;
             // 
+            // SlidePanel
+            // 
+            this.SlidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(113)))), ((int)(((byte)(234)))));
+            this.SlidePanel.Location = new System.Drawing.Point(0, 106);
+            this.SlidePanel.Name = "SlidePanel";
+            this.SlidePanel.Size = new System.Drawing.Size(15, 50);
+            this.SlidePanel.TabIndex = 2;
+            // 
             // btnusuarios
             // 
             this.btnusuarios.FlatAppearance.BorderSize = 0;
@@ -70,6 +78,7 @@
             this.btnusuarios.Text = "Usuários";
             this.btnusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnusuarios.UseVisualStyleBackColor = true;
+            this.btnusuarios.Click += new System.EventHandler(this.btnusuarios_Click);
             // 
             // btnquartos
             // 
@@ -84,6 +93,7 @@
             this.btnquartos.Text = "Quartos";
             this.btnquartos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnquartos.UseVisualStyleBackColor = true;
+            this.btnquartos.Click += new System.EventHandler(this.btnquartos_Click);
             // 
             // btnprodutos
             // 
@@ -98,6 +108,7 @@
             this.btnprodutos.Text = "Produtos";
             this.btnprodutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnprodutos.UseVisualStyleBackColor = true;
+            this.btnprodutos.Click += new System.EventHandler(this.btnprodutos_Click);
             // 
             // btnfornecedores
             // 
@@ -112,6 +123,7 @@
             this.btnfornecedores.Text = "Fornecedores";
             this.btnfornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnfornecedores.UseVisualStyleBackColor = true;
+            this.btnfornecedores.Click += new System.EventHandler(this.btnfornecedores_Click);
             // 
             // btnclientes
             // 
@@ -126,6 +138,7 @@
             this.btnclientes.Text = "Clientes";
             this.btnclientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnclientes.UseVisualStyleBackColor = true;
+            this.btnclientes.Click += new System.EventHandler(this.btnclientes_Click);
             // 
             // pictureBox1
             // 
@@ -143,14 +156,6 @@
             this.panel2.Size = new System.Drawing.Size(1000, 30);
             this.panel2.TabIndex = 1;
             // 
-            // SlidePanel
-            // 
-            this.SlidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(113)))), ((int)(((byte)(234)))));
-            this.SlidePanel.Location = new System.Drawing.Point(0, 106);
-            this.SlidePanel.Name = "SlidePanel";
-            this.SlidePanel.Size = new System.Drawing.Size(15, 50);
-            this.SlidePanel.TabIndex = 2;
-            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +168,7 @@
             this.Name = "MainForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm2";
+            this.Load += new System.EventHandler(this.MainForm2_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
