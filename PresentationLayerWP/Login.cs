@@ -22,7 +22,7 @@ namespace PresentationLayerWP
 
         private void logarbtn_Click(object sender, EventArgs e)
         {
-            FuncionarioBLL bll = new FuncionarioBLL();
+            UsuarioBLL bll = new UsuarioBLL();
             Response r = bll.Autenticate(emailtxt.Text, senhatxt.Text);
             if (r.Success)
             {

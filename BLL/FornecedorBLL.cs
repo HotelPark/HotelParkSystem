@@ -51,13 +51,13 @@ namespace BLL
         }
         public override Response Validate(Fornecedor item)
         {
-            if (string.IsNullOrWhiteSpace(item.Nome))
+            if (string.IsNullOrWhiteSpace(item.Razao_Social))
             {
-                AddError("O nome deve ser informado.");
+                AddError("A razão social deve ser informada");
             }
-            else if (item.Nome.Length < 3 || item.Nome.Length > 70)
+            else if (item.Razao_Social.Length < 3 || item.Razao_Social.Length > 70)
             {
-                AddError("O nome deve conter entre 3 e 70 caracteres.");
+                AddError("A razão social deve conter entre 3 e 70 caracteres.");
             }
             AddError(item.CNPJ.IsValidCNPJ());
             if (!string.IsNullOrWhiteSpace(item.CNPJ))

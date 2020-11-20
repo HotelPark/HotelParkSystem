@@ -22,7 +22,7 @@ namespace PresentationLayerWP
             Quarto quarto = response.Data;
         }
 
-        RoomBLL roomBLL = new RoomBLL();
+        QuartoBLL roomBLL = new QuartoBLL();
 
         private void btncleanfields_Click(object sender, EventArgs e)
         {

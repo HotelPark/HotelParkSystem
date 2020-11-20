@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class RoomBLL: BaseValidator<Quarto>
+    public class QuartoBLL: BaseValidator<Quarto>
     {
         private QuartoDAO quartoDAO = new QuartoDAO();
         public SingleResponse<Quarto> GetById(int id)

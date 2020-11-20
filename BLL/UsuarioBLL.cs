@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class FuncionarioBLL : BaseValidator<Usuario>
+    public class UsuarioBLL : BaseValidator<Usuario>
     {
         private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         public SingleResponse<Usuario> GetById(int id)
@@ -83,40 +83,40 @@ namespace BLL
             }
 
             
-            //int nDigitos = 0;
-            //int nLetras = 0;
-            //int nSinais = 0;
-            //int nMaiuscula = 0;
-            //int nMinuscula = 0;
-            //for (int i = 0; i < senhasistema.Length; i++)
-            //{
-            //    if (char.IsNumber(senhasistema[i]))
-            //    {
-            //        nDigitos++;
-            //    }
-            //    else if (char.IsLetter(senhasistema[i]))
-            //    {
-            //        nLetras++;
-            //        if (char.IsUpper(senhasistema[i]))
-            //        {
-            //            nMaiuscula++;
-            //        }
-            //        else
-            //        {
-            //            nMinuscula++;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        nSinais++;
-            //    }
-            //}
+            int nDigitos = 0;
+            int nLetras = 0;
+            int nSinais = 0;
+            int nMaiuscula = 0;
+            int nMinuscula = 0;
+            for (int i = 0; i < senhasistema.Length; i++)
+            {
+                if (char.IsNumber(senhasistema[i]))
+                {
+                    nDigitos++;
+                }
+                else if (char.IsLetter(senhasistema[i]))
+                {
+                    nLetras++;
+                    if (char.IsUpper(senhasistema[i]))
+                    {
+                        nMaiuscula++;
+                    }
+                    else
+                    {
+                        nMinuscula++;
+                    }
+                }
+                else
+                {
+                    nSinais++;
+                }
+            }
 
-            //if (nSinais < 1 || nMaiuscula < 1 || nMinuscula < 1 || nLetras < 1 || nDigitos < 1)
-            //{
-            //    r.Success = false;
-            //    r.Message = "Senha deve conter ao menos blablablabla";
-            //}
+            if (nSinais < 1 || nMaiuscula < 1 || nMinuscula < 1 || nLetras < 1 || nDigitos < 1)
+            {
+                r.Success = false;
+                r.Message = "A senha deve conter ao menos um sinal, uma letra minúscula e uma letra maiúscula";
+            }
 
 
             if (r.Success)

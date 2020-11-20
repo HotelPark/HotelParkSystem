@@ -22,7 +22,7 @@ namespace PresentationLayerWP
             SingleResponse<Usuario> response = funcionarioBLL.GetById(2);
             Usuario funcionario = response.Data;
         }
-        FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
+        UsuarioBLL funcionarioBLL = new UsuarioBLL();
 
         private void btnregister_Click(object sender, EventArgs e)
         {

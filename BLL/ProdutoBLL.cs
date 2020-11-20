@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ProductBLL: BaseValidator<Produto>
+    public class ProdutoBLL: BaseValidator<Produto>
     {
         private ProdutoDAO produtoDAO = new ProdutoDAO();
         public SingleResponse<Produto> GetById(int id)

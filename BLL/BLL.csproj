@@ -45,10 +45,10 @@
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="FornecedorBLL.cs" />
-    <Compile Include="FuncionarioBLL.cs" />
-    <Compile Include="ProductBLL.cs" />
+    <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="ProdutoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomBLL.cs" />
+    <Compile Include="QuartoBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
