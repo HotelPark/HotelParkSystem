@@ -19,11 +19,12 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO PRODUTOS (NOME, PRECO, ESTOQUE, DATAVALIDADE) VALUES (@NOME, @PRECO, @ESTOQUE, @DATAVALIDADE)";
+            command.CommandText = "INSERT INTO PRODUTOS (NOME, PRECO, ESTOQUE, DATAVALIDADE, FORNECEDORID) VALUES (@NOME, @PRECO, @ESTOQUE, @DATAVALIDADE, @FORNECEDORID)";
             command.Parameters.AddWithValue("@NOME", produto.Nome);
             command.Parameters.AddWithValue("@PRECO", produto.Preco);
             command.Parameters.AddWithValue("@ESTOQUE", produto.Estoque);
             command.Parameters.AddWithValue("@DATAVALIDADE", produto.DataValidade);
+            command.Parameters.AddWithValue("@FORNECEDORID", produto.Fornecedor_ID);
             command.Connection = connection;
 
             try
@@ -55,7 +56,8 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "INSERT INTO PRODUTOS (NOME, PRECO, ESTOQUE, DATAVALIDADE) VALUES (@NOME, @PRECO, @ESTOQUE, @DATAVALIDADE)";
+            command.CommandText = "UPDATE PRODUTOS SET NOME = @NOME, PRECO = @PRECO, ESTOQUE = @ESTOQUE, DATAVALIDADE = @DATAVALIDADE WHERE ID = @ID";
+            command.Parameters.AddWithValue("@ID", produto.ID);
             command.Parameters.AddWithValue("@NOME", produto.Nome);
             command.Parameters.AddWithValue("@PRECO", produto.Preco);
             command.Parameters.AddWithValue("@ESTOQUE", produto.Estoque);
@@ -97,7 +99,7 @@ namespace DataAcessLayer
 
             SqlCommand command = new SqlCommand();
             command.CommandText =
-                "DELETE FROM CLIENTES WHERE ID = @ID";
+                "DELETE FROM PRODUTOS WHERE ID = @ID";
             command.Parameters.AddWithValue("@ID", produto.ID);
             command.Connection = connection;
 
@@ -136,7 +138,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM PRODUTOS WHERE ATIVO = 1";
+            command.CommandText = "SELECT P.ID 'ID', P.NOME 'NOME', P.DESCRICAO 'DESCRICAO', P.PRECO 'PRECO , P.QUANTIDADE_ESTOQUE 'QUANTIDADE_ESTOQUE',P.ATIVO 'ATIVO',P.IDFORNECEDOR 'IDFORNECEDOR', F.RAZAOSOCIAL 'RAZAOSOCIAL',F.CNPJ 'CNPJ',F.TELEFONE 'TELEFONE',F.EMAIL 'EMAIL',F.ATIVO 'ATIVO'FROM PRODUTOS P INNER JOIN FORNECEDORES F ON P.IDFORNECEDOR = F.ID";
             command.Connection = connection;
 
             try
@@ -155,6 +157,7 @@ namespace DataAcessLayer
                     produto.Preco = (double)reader["PRECO"];
                     produto.Estoque = (int)reader["ESTOQUE"];
                     produto.DataValidade = (DateTime)reader["DATAVALIDADE"];
+                    //produto.Fornecedor_ID =
                     produtos.Add(produto);
 
                 }

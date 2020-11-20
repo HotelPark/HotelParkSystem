@@ -57,9 +57,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText =
-            "UPDATE INTO FORNECEDORES (RAZAO_SOCIAL, CNPJ, NOME_CONTATO, TELEFONE, EMAIL) VALUES (@RAZAO_SOCIAL, @CNPJ, @NOME_CONTATO, @TELEFONE, @EMAIL)";
-
+            command.CommandText = "UPDATE FORNECEDORES SET RAZAO_SOCIAL = @RAZAO_SOCIAL, CNPJ = @CNPJ, NOME_CONTATO = @NOME_CONTATO, TELEFONE = @TELEFONE, EMAIL = @EMAIL WHERE ID = @ID";
             command.Parameters.AddWithValue("@RAZAO_SOCIAL", fornecedor.Razao_Social);
             command.Parameters.AddWithValue("@CNPJ", fornecedor.CNPJ);
             command.Parameters.AddWithValue("@NOME_CONTATO", fornecedor.Nome_Contato);

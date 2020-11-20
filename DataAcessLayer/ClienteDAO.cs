@@ -67,7 +67,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "UPDATE INTO CLIENTES (NOME, TELEFONE_1, TELEFONE_2, ENDERECO, EMAIL, ESPECIAL,) VALUES (@NOME, @TELEFONE_1, @TELEFONE_2, @ENDERECO, @EMAIL, @ESPECIAL,";
+            command.CommandText = "UPDATE CLIENTES SET NOME = @NOME, TELEFONE_1 = @TELEFONE_1, TELEFONE_2 = @TELEFONE_2, ENDERECO = @ENDERECO, EMAIL = @EMAIL, ESPECIAL = @ESPECIAL WHERE ID = @ID";
             command.Parameters.AddWithValue("@NOME", cliente.Nome);
             command.Parameters.AddWithValue("@TELEFONE_1", cliente.Telefone_1);
             command.Parameters.AddWithValue("@TELEFONE_2", cliente.Telefone_2);

@@ -56,8 +56,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText =
-                "UPDATE QUARTOS SET VALOR_BASE = @VALOR_BASE, RESERVA = @RESERVA, NUMQUARTO = @NUMQUARTO, CATEGORIAS = @CATEGORIAS, ESTAOCUPADO = @ESTAOCUPADO";
+            command.CommandText = "UPDATE QUARTOS SET VALOR_BASE = @VALOR_BASE, RESERVA = @RESERVA, NUMQUARTO = @NUMQUARTO, CATEGORIAS = @CATEGORIAS, ESTAOCUPADO = @ESTAOCUPADO WHERE ID = @ID";
             command.Parameters.AddWithValue("@VALOR_BASE", quarto.Valor_Base);
             command.Parameters.AddWithValue("@RESERVA", quarto.Reserva);
             command.Parameters.AddWithValue("@NUMQUARTO", quarto.NumQuarto);
