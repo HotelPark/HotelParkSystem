@@ -18,15 +18,15 @@ namespace PresentationLayerWP
         public Supplier()
         {
             InitializeComponent();
-            SingleResponse<Fornecedor> response = fornecedorBLL.GetById(2);
-            Fornecedor fornecedor = response.Data;
+            SingleResponse<Fornecedores> response = fornecedorBLL.GetById(2);
+            Fornecedores fornecedor = response.Data;
         }
 
         FornecedorBLL fornecedorBLL = new FornecedorBLL();
 
         private void btncadastrar_Click(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = new Fornecedor();
+            Fornecedores fornecedor = new Fornecedores();
             fornecedor.Razao_Social = txtnome.Text;
             fornecedor.CNPJ = txtcnpj.Text;
             fornecedor.Email = txtemail.Text;
@@ -44,7 +44,7 @@ namespace PresentationLayerWP
         }
         private void UpdateGridView()
         {
-            QueryResponse<Fornecedor> response = fornecedorBLL.GetAll();
+            QueryResponse<Fornecedores> response = fornecedorBLL.GetAll();
             if (response.Success)
             {
                 dgvClientes.DataSource = response.Data;

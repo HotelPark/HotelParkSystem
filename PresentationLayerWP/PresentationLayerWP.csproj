@@ -58,6 +58,12 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornecedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fornecedores.Designer.cs">
+      <DependentUpon>Fornecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,18 @@
     </Compile>
     <Compile Include="Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Produtos.Designer.cs">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quartos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quartos.Designer.cs">
+      <DependentUpon>Quartos.cs</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
       <SubType>Form</SubType>
@@ -115,11 +133,20 @@
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedores.resx">
+      <DependentUpon>Fornecedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm2.resx">
       <DependentUpon>MainForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos.resx">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quartos.resx">
+      <DependentUpon>Quartos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
