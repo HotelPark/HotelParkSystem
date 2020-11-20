@@ -138,7 +138,7 @@ namespace DataAcessLayer
             connection.ConnectionString = ConnectionHelper.GetConnectionString();
 
             SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT P.ID 'ID', P.NOME 'NOME', P.DESCRICAO 'DESCRICAO', P.PRECO 'PRECO , P.QUANTIDADE_ESTOQUE 'QUANTIDADE_ESTOQUE',P.ATIVO 'ATIVO',P.IDFORNECEDOR 'IDFORNECEDOR', F.RAZAOSOCIAL 'RAZAOSOCIAL',F.CNPJ 'CNPJ',F.TELEFONE 'TELEFONE',F.EMAIL 'EMAIL',F.ATIVO 'ATIVO'FROM PRODUTOS P INNER JOIN FORNECEDORES F ON P.IDFORNECEDOR = F.ID";
+            command.CommandText = "SELECT P.ID 'ID', P.NOME 'NOME', P.DESCRICAO 'DESCRICAO', P.PRECO 'PRECO' , P.ESTOQUE 'ESTOQUE', P.FORNECEDORID 'FORNECEDORID', F.RAZAO_SOCIAL 'RAZAO_SOCIAL', F.CNPJ 'CNPJ', F.NOME_CONTATO 'NOME_CONTATO', F.TELEFONE 'TELEFONE', F.EMAIL 'EMAIL', FROM PRODUTOS P INNER JOIN FORNECEDORES F ON P.FORNECEDORID = F.ID";
             command.Connection = connection;
 
             try
@@ -157,7 +157,17 @@ namespace DataAcessLayer
                     produto.Preco = (double)reader["PRECO"];
                     produto.Estoque = (int)reader["ESTOQUE"];
                     produto.DataValidade = (DateTime)reader["DATAVALIDADE"];
-                    //produto.Fornecedor_ID =
+                    produto.Fornecedor_ID = (int)reader["FORNECEDORID"];
+
+                    Fornecedor F = new Fornecedor();
+                    F.ID = (int)reader["ID"];
+                    F.Razao_Social = (string)reader["RAZAO_SOCIAL"];
+                    F.CNPJ = (string)reader["CNPJ"];
+                    F.Nome_Contato = (string)reader["NOME_CONTATO"];
+                    F.Telefone = (string)reader["TELEFONE"];
+                    F.Email = (string)reader["EMAIL"];
+
+                    produto.Fornecedor = F;
                     produtos.Add(produto);
 
                 }
